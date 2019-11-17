@@ -1,2 +1,15 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<div class="container mt-3">
+  <h1>연세위키에 오신 여러분, 환영합니다.</h1>
+  <p>이제부터 겨레의 연세를 속속들이 알아볼까요><</p>
+
+  <ul class="list-group">
+    <% @topics.each do |topic| %>
+      <%= link_to topic do %>
+        <li class="list-group-item">
+          <%= topic.title %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>
