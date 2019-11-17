@@ -317,7 +317,7 @@ DEPENDENCIES
   acts_as_list
   any_login
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.3.1)
+  bootstrap
   byebug
   capybara (>= 2.15)
   carrierwave (~> 2.0)

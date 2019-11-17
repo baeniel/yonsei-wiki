@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'devise'
-gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'any_login'
+gem 'bootstrap'
 gem 'carrierwave', '~> 2.0'
 gem 'devise-i18n'
 gem 'mini_magick'
