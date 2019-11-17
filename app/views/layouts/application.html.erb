@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= any_login_here if defined?(AnyLogin) || Rails.env.development? %>
     <%= yield %>
   </body>
 </html>
