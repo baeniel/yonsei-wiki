@@ -1,13 +1,21 @@
 <div class="container mt-3">
   <p>연대의 <%= @topic.title %></p>
-  <ul class="list-group">
+  <ul class="list-group mb-4">
     <% @subtopics.each do |sub_topic| %>
       <%= link_to sub_topic do %>
         <li class="list-group-item">
-          <%= sub_topic.title %>
+          <div class="d-flex justify-content-end">
+            <div class="col">
+              <%= sub_topic.title %>
+            </div>
+            <div class="col text-right">
+              <%= link_to "수정", edit_subtopic_path(sub_topic), class: 'text-dark' %>
+              <%= link_to "삭제", subtopic_path(sub_topic), method: :delete, class: 'text-dark' %>
+            </div>
+          </div>
         </li>
       <% end %>
     <% end %>
   </ul>
-
+  <%= link_to "자유롭게 추가해주세요", new_subtopic_path(topic: @topic) %>
 </div>

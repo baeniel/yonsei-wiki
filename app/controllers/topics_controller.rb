@@ -1,14 +1,15 @@
 class TopicsController < ApplicationController
+  before_action :load_object, only: [:show, :edit, :update, :destroy]
+
   def index
     @topics = Topic.all
   end
 
   def show
-    @topic = Topic.find params[:id]
     @subtopics = Subtopic.where(topic: @topic)
   end
 
-  def new
+  def new  
   end
 
   def create
@@ -21,5 +22,10 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def load_object
+    @topic = Topic.find params[:id]
   end
 end
