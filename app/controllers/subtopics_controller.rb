@@ -5,6 +5,7 @@ class SubtopicsController < ApplicationController
   end
 
   def show
+    @topic = @subtopic.topic
   end
 
   def new

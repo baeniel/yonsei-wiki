@@ -6,10 +6,10 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @subtopics = Subtopic.where(topic: @topic)
+    @subtopics = Subtopic.where(topic: @topic).page(params[:page]).per(10)
   end
 
-  def new  
+  def new
   end
 
   def create

@@ -17,5 +17,7 @@
       <% end %>
     <% end %>
   </ul>
-  <%= link_to "자유롭게 추가해주세요", new_subtopic_path(topic: @topic) %>
+  <%= paginate @subtopics %>
+  <%= link_to "자유롭게 추가해주세요", new_subtopic_path(topic: @topic) %> <br> <br>
+  <%= link_to "뒤로 가기", root_path, class: "btn btn-info" %>
 </div>
