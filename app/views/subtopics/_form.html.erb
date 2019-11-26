@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.hidden_field :topic_id, value: params[:topic] %>
     <%= f.label :title, "항목" %>
-    <%= f.text_field :title, placeholder: "입력하세요", class: "form-control" %>
+    <%= f.text_area :title, rows: 5, placeholder: "입력하세요", class: "form-control" %>
   </div>
   <button type="submit" class="btn btn-primary">등록</button>
 <% end %>

@@ -1,10 +1,10 @@
 <div class="container mt-3">
-  <p>연대의 <%= @topic.title %></p>
+  <p><strong>연대의 <%= @topic.title %></strong></p>
   <ul class="list-group mb-4">
     <% @subtopics.each do |sub_topic| %>
       <%= link_to sub_topic do %>
         <li class="list-group-item">
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-end row">
             <div class="col">
               <%= sub_topic.title %>
             </div>
@@ -18,6 +18,6 @@
     <% end %>
   </ul>
   <%= paginate @subtopics %>
-  <%= link_to "자유롭게 추가해주세요", new_subtopic_path(topic: @topic) %> <br> <br>
-  <%= link_to "뒤로 가기", root_path, class: "btn btn-info" %>
+  <%= link_to "자유롭게 추가해주세요", new_subtopic_path(topic: @topic), class: "btn btn-info" %> <br> <br>
+  <%= link_to "뒤로 가기", root_path %>
 </div>
