@@ -1,0 +1,3 @@
+<% Post.where(subtopic: subtopic).each do |post| %>
+  <%= post.content %> <br>
+<% end %>

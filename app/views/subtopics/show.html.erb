@@ -1,6 +1,12 @@
 <div class="container mt-3">
 
-  <%= form_for @post do |f| %>
+  <div id="content-make">
+    <%= render 'subtopics/content', subtopic: @subtopic %>
+  </div>
+
+  <br> <br> <br>
+
+  <%= form_for @post, remote: true do |f| %>
     <div class="form-group">
       <%= f.hidden_field :subtopic_id, value: params[:sub_topic] %>
       <%= f.label :content, "내용" %>
@@ -8,10 +14,7 @@
     </div>
     <button type="submit" class="btn btn-primary mb-3">등록</button>
   <% end %>
-  <%= link_to "뒤로 가기", topic_path(@topic) %>
-  <br> <br> <br>
 
-  <% Post.all.each do |post| %>
-    <%= post.content %>
-  <% end %>
+
+  <%= link_to "뒤로 가기", topic_path(@topic) %>
 </div>
