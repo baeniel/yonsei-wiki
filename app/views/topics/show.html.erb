@@ -2,7 +2,7 @@
   <p><strong>연대의 <%= @topic.title %></strong></p>
   <ul class="list-group mb-4">
     <% @subtopics.each do |sub_topic| %>
-      <%= link_to sub_topic do %>
+      <%= link_to subtopic_path(sub_topic: sub_topic) do %>
         <li class="list-group-item">
           <div class="d-flex justify-content-end row">
             <div class="col">

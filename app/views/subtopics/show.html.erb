@@ -1,5 +1,17 @@
 <div class="container mt-3">
-  <h1>이 동아리의 모든 것</h1>
-  <p>불라불라샬라샬라불라랄랄랄랄샬랄랄랄랄</p>
-  <%= link_to "뒤로 가기", topic_path(@topic), class: "btn btn-info" %>
+
+  <%= form_for @post do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :subtopic_id, value: params[:sub_topic] %>
+      <%= f.label :content, "내용" %>
+      <%= f.text_area :content, rows: 5, placeholder: "입력하세요", class: "form-control" %>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">등록</button>
+  <% end %>
+  <%= link_to "뒤로 가기", topic_path(@topic) %>
+  <br> <br> <br>
+
+  <% Post.all.each do |post| %>
+    <%= post.content %>
+  <% end %>
 </div>

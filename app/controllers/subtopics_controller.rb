@@ -1,10 +1,12 @@
 class SubtopicsController < ApplicationController
-  before_action :load_object, only: [:show, :edit, :update, :destroy]
+  before_action :load_object, only: [:edit, :update, :destroy]
 
   def index
   end
 
   def show
+    @post = Post.new
+    @subtopic = Subtopic.find params[:sub_topic]
     @topic = @subtopic.topic
   end
 
