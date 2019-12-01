@@ -8,6 +8,7 @@ class SubtopicsController < ApplicationController
     @post = Post.new
     @subtopic = Subtopic.find params[:sub_topic]
     @topic = @subtopic.topic
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def new

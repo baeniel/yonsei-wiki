@@ -1,8 +1,10 @@
-<div class="container mt-3">
+<div class="container">
 
   <div id="content-make">
-    <%= render 'subtopics/content', subtopic: @subtopic %>
+    <%= render 'subtopics/content' %>
   </div>
+
+  <%#= paginate @posts %>
 
   <br> <br> <br>
 
@@ -15,6 +17,5 @@
     <button type="submit" class="btn btn-primary mb-3">등록</button>
   <% end %>
 
-
-  <%= link_to "뒤로 가기", topic_path(@topic) %>
+  <%= link_to "뒤로 가기", topic_path(@topic), class: "pb-5" %>
 </div>

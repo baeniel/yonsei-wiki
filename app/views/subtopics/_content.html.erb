@@ -1,3 +1,18 @@
-<% Post.where(subtopic: subtopic).each do |post| %>
-  <%= post.content %> <br>
-<% end %>
+<div class="container mt-3">
+  <ul class="list-group mb-4">
+    <p><strong><%= @subtopic.title %></strong></p>
+    <% Post.where(subtopic: @subtopic).each do |post| %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-end row">
+          <div class="col">
+            <%= post.content %> <br>
+          </div>
+          <div class="col text-right">
+            <%#= link_to "수정", edit_post_path(post), class: 'edit-click text-dark' %>
+            <%= link_to "삭제", post_path(post), method: :delete, remote: true, class: 'text-dark' %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
