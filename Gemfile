@@ -7,7 +7,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'any_login'
 gem 'bootstrap'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'devise-i18n'
 gem 'mini_magick'
 gem "activeadmin"
